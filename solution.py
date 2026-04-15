@@ -16,7 +16,7 @@ def extract(file_path):
     try:
         with open(file_path, 'r') as f:
             data = json.load(f)
-        print(f"Extracted {len(data)} records.")
+        print(f"Extracted: {len(data)}")
         return data
     except FileNotFoundError:
         print("Error: File not found.")
@@ -43,7 +43,8 @@ def validate(data):
         else:
             error_count += 1
 
-    print(f"Validation complete. Valid: {len(valid_records)}, Errors: {error_count}")
+    print(f"Processed: {len(valid_records)}")
+    print(f"Dropped: {error_count}")
     return valid_records
 
 
